@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Items, in their simplest form, are sprites of their item image as well as a reference to their scriptbale-object-version called 'sourceItem.' All items have itemCounts as well, however by default, items
+ * can only be 1 unless otherwise specified (for example, bullets are stackable and can hold more than 1). Since items are instantiated versions of scriptableObjects, a reference to the source
+ * item is required when trying to make copies of this item in-game (can not reliablty make instances of instances).
+ */
+
 public enum ItemType { misc, consumable, throwable, cosmetic, ammo}
 
 //[CreateAssetMenu(fileName = "ItemScriptableObject", menuName = "ScriptableObjects/Item")]
