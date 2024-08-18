@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * The Player script is in charge of making any changes to the main player entity (Muna). If Muna is damaged, hit by a grenade, trys to loot, or consumes an item, then any animation triggers are sent here
+ * and reflected onto her animation state. The Player's link to the Human script allows us to block certain behaviours of overhead mechanics such as menu item manipulation while reloading,
+ * hanging on a cliff, or in a damaged state. Other environmental values are found here, such as slope angles that prevent the player from running up steep inclines or perpendicular walls that can be climbed.
+ * Rotational changes are also made here based on the player's animation: by default the player faces the direction of camera-relative input, but other animations like slashing, throwing, or firing, require
+ * the player face the same direction of the camera or the input. Certain animations can also flip the animation to oppose input, or slow rotational speed. This script also offers player bone transform positions
+ * for instatiating throwables, bullets, or consumables. Links to HealthController and StaminaController have also been made to limit player movement when all stamina has been exhasuted or the player dies.
+ */
+
 public enum RotationMode{ oppositeVelocity = 1, forwardVelocity = 2, snapInput = 3, slopeForward = 4, ball = 5, snapPause = 6, attackRotation = 7, towardTarget = 8, towardWall = 9, towardInput = -1, lockRotation = -2}
 [RequireComponent(typeof(Rigidbody), typeof(Collider), typeof(Animator))]
 public class Player : MonoBehaviour
