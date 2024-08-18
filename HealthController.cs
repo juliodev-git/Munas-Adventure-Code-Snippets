@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/*
+ * HealthController tracks an entity's health and allows for health manipulation via damage from bullets, grenades, slashes or the healing effects of consumables.
+ * A delegate is used to trigger any events that come from an entitie's death or changes to an entities health.
+ * For the player, health updates trigger the UI to update the health bar. The OnDie delegate is used to trigger a game over.
+ * For any other entities, only the OnDie delegate is used: either to spawn loot from the enemy, or instantiate an explosion followed by object destruction.
+ */
+
 public class HealthController : MonoBehaviour
 {
     [SerializeField]
