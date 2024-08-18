@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This script is attached to a particle system. Using OnParticleCollision, we can detect any colliders that were hit by our bullet particle and interact with them.
+ * In our case, we simply deduct health from any HealthControllers attached to GameObjects. The HealthController handles it from there.
+ */
+
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
