@@ -13,7 +13,7 @@ I challenged myself to create a fully playable prototype in one year. In that ti
 
 _______________________________________
 
-**CosmeticController.cs**: Searches through parented objects on player, storing any objects with the tag 'cosmetic.' Once stored, a helper function can use an index to mark a cosmetic as ON and visible. If the player is already wearing cosmetic, the current cosmetic index is disabled and overriden by the new index.
+**Bullet.cs**: This script is attached to a particle system. Using OnParticleCollision, we can detect any colliders that were hit by our bullet particle and interact with them. In our case, we simply deduct health from any HealthControllers attached to GameObjects. The HealthController handles it from there.
 
 **DropDownFace.cs**: This scipt is linked directly to a dropdown UI list. On Start, a list of selectable cosmetics is generated based on any cosmetic items that were found by CosmeticController. If the player selects a new cosmetic item from the list, the index of selected item is sent to CosemticController where it is enabled.
 
