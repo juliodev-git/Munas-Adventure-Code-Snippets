@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/*
+ * The InventoryScriptableObject maintains a list of items, storing any changes made to it to PlayerPrefs - allowing for a live and up-to-date instance of the players inventory. By using a class specifically
+ * for holding a list (InventoryClass), we can store the list of items as a JSON string to PlayerPrefs. Data manipulation functions can be used by any component that adds to, removes from, or positionally
+ * changes the player inventory such as: the inventory/looting menu, pickup objects, or item triggers that consume an item to activate an in-game effect.
+ */
+
 [CreateAssetMenu(fileName = "InventoryScriptableObject", menuName = "ScriptableObjects/InventoryScriptableObject")]
 public class InventoryScriptableObject : ScriptableObject
 {
