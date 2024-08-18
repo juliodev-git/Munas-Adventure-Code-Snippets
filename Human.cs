@@ -7,11 +7,11 @@ using Cinemachine;
 
 /*
  * Human class is primarily used to give control of a player entity to the user (in our case, the player entity is Muna).
- * This class also communicates player states to player-dependent components such as UI menus and in-game pickups: for UI menus, some menus will not open if the player is damaged or reloading - pickups and lootables
- * also need a target to add themselves too, and Human offers a link from Muna (the player entity) to our users item list.
- * Input values such as joystick and button presses are checked here and sent to the player entity, along with camera rotation information, to move the character relative to the camera. For aiming and firing purposes,
- * the player can be rotated to face the same direction as the camera as well. Camera component values are also changed here based on button presses; for example, if the player is holding the 'aim' button,
- * the camera will zoom in to make target finding easier.
+ * This class also communicates player states to player-dependent components such as UI menus and in-game pickups: for UI menus, some menus will not open if the player is damaged or reloading
+ * - pickups and lootables also need a target to add themselves too, and Human offers a link from Muna (the player entity) to our users item list.
+ * Input values such as joystick and button presses are checked here and sent to the player entity, along with camera rotation information, to move the character relative to the camera.
+ * For aiming and firing purposes, the player can be rotated to face the same direction as the camera as well. Camera component values are also changed here based on button presses
+ * for example, if the player is holding the 'aim' button, the camera will zoom in to make target finding easier.
  */
 
 public class Human : MonoBehaviour
